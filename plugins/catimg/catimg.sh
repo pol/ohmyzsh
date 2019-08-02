@@ -1,6 +1,6 @@
 ################################################################################
 # catimg script by Eduardo San Martin Morote aka Posva                         #
-# https://posva.net                                                            #
+# http://posva.net                                                             #
 #                                                                              #
 # Ouput the content of an image to the stdout using the 256 colors of the      #
 # terminal.                                                                    #

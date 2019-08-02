@@ -4,7 +4,7 @@ Plugin for ForkLift, an FTP application for OS X.
 
 ### Requirements
 
-* [ForkLift](https://binarynights.com/)
+* [ForkLift](http://www.binarynights.com/forklift/)
 
 ### Usage
 

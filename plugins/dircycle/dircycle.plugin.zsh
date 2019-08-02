@@ -9,36 +9,31 @@
 #  pushd -N: start counting from right of `dirs' output
 
 switch-to-dir () {
-	setopt localoptions nopushdminus
-	[[ ${#dirstack} -eq 0 ]] && return 1
+	[[ ${#dirstack} -eq 0 ]] && return
 
 	while ! builtin pushd -q $1 &>/dev/null; do
 		# We found a missing directory: pop it out of the dir stack
 		builtin popd -q $1
 
 		# Stop trying if there are no more directories in the dir stack
-		[[ ${#dirstack} -eq 0 ]] && return 1
+		[[ ${#dirstack} -eq 0 ]] && break
 	done
 }
 
 insert-cycledleft () {
-	switch-to-dir +1 || return
+	emulate -L zsh
+	setopt nopushdminus
 
-	local fn
-	for fn (chpwd $chpwd_functions precmd $precmd_functions); do
-		(( $+functions[$fn] )) && $fn
-	done
+	switch-to-dir +1
 	zle reset-prompt
 }
 zle -N insert-cycledleft
 
 insert-cycledright () {
-	switch-to-dir -0 || return
+	emulate -L zsh
+	setopt nopushdminus
 
-	local fn
-	for fn (chpwd $chpwd_functions precmd $precmd_functions); do
-		(( $+functions[$fn] )) && $fn
-	done
+	switch-to-dir -0
 	zle reset-prompt
 }
 zle -N insert-cycledright

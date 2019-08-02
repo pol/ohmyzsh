@@ -1,8 +1,6 @@
-## Terraform oh-my-zsh plugin
+## atom
 
 Plugin for Terraform, a tool from Hashicorp for managing infrastructure safely and efficiently.
-
-Current as of Terraform v0.11.7
 
 ### Requirements
 
@@ -14,8 +12,8 @@ Current as of Terraform v0.11.7
 
 ### Expanding ZSH prompt with current Terraform workspace name
 
-If you want to get current Terraform workspace name in your ZSH prompt open
-your .zsh-theme file and in a chosen place insert:
+If you want to get current Terraform workspace name in your ZSH prompt open 
+your .zsh-theme file and in a choosen place insert:
 
 ```
 $FG[045]\

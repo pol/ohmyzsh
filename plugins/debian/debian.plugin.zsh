@@ -5,12 +5,9 @@
 #
 # Debian-related zsh aliases and functions for zsh
 
-# Use apt or aptitude if installed, fallback is apt-get
+# Use aptitude if installed, or apt-get if not.
 # You can just set apt_pref='apt-get' to override it.
-if [[ -e $( which -p apt 2>&1 ) ]]; then
-    apt_pref='apt'
-    apt_upgr='upgrade'
-elif [[ -e $( which -p aptitude 2>&1 ) ]]; then
+if [[ -e $( which -p aptitude 2>&1 ) ]]; then
     apt_pref='aptitude'
     apt_upgr='safe-upgrade'
 else
@@ -179,7 +176,7 @@ apt-copy() {
 #   apt-history remove
 #   apt-history rollback
 #   apt-history list
-# Based On: https://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
+# Based On: http://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
 apt-history () {
   case "$1" in
     install)

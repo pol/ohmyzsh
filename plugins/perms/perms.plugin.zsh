@@ -6,14 +6,10 @@
 ### Aliases
 
 # Set all files' permissions to 644 recursively in a directory
-set644() {
-	find "${@:-.}" -type f ! -perm 644 -print0 | xargs -0 chmod 644
-}
+alias set644='find . -type f ! -perm 644 -print0 | xargs -0 chmod 644'
 
 # Set all directories' permissions to 755 recursively in a directory
-set755() {
-	find "${@:-.}" -type d ! -perm 755 -print0 | xargs -0 chmod 755
-}
+alias set755='find . -type d ! -perm 755 -print0 | xargs -0 chmod 755'
 
 ### Functions
 

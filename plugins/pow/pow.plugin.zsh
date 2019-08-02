@@ -73,7 +73,7 @@ powed(){
 }
 
 # Restart pow process
-# taken from https://www.matthewratzloff.com
+# taken from http://www.matthewratzloff.com/blog/2011/12/23/restarting-pow-when-dns-stops-responding
 repow(){
   lsof | grep 20560 | awk '{print $2}' | xargs kill -9
   launchctl unload ~/Library/LaunchAgents/cx.pow.powd.plist

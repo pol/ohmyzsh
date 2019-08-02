@@ -1,3 +1,4 @@
+# ZSH Theme - Preview: http://dl.dropbox.com/u/4109351/pics/gnzh-zsh-theme.png
 # Based on bira theme
 
 setopt prompt_subst

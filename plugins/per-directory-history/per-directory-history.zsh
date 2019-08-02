@@ -109,13 +109,8 @@ function _per-directory-history-change-directory() {
 }
 
 function _per-directory-history-addhistory() {
-  # respect hist_ignore_space
-  if [[ -o hist_ignore_space ]] && [[ "$1" == \ * ]]; then
-      true
-  else
-      print -Sr -- "${1%%$'\n'}"
-      fc -p $_per_directory_history_directory
-  fi
+  print -Sr -- "${1%%$'\n'}"
+  fc -p $_per_directory_history_directory
 }
 
 

@@ -11,21 +11,7 @@ This plugin automatically registers npx command-not-found handler if `npx` exist
 plugins=(.... npx)
 ```
 
-- Globally install npx binary (npx will be auto installed with recent versions of Node.js)
+- Globally install npx binary (you need node.js installed too!)
 ```bash
 sudo npm install -g npx
 ```
-
-## Note
-
-The shell auto-fallback doesn't auto-install plain packages. In order to get it to install something, you need to add `@`:
-
-```
-➜  jasmine@latest # or just `jasmine@`
-npx: installed 13 in 1.896s
-Randomized with seed 54385
-Started
-```
-
-It does it this way so folks using the fallback don't accidentally try to install regular typoes.
-

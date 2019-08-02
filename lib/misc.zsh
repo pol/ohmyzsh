@@ -18,11 +18,13 @@ fi
 ## jobs
 setopt long_list_jobs
 
-env_default 'PAGER' 'less'
-env_default 'LESS' '-R'
+## pager
+env_default PAGER 'less'
+env_default LESS '-R'
 
 ## super user alias
 alias _='sudo'
+alias please='sudo'
 
 ## more intelligent acking for ubuntu users
 if which ack-grep &> /dev/null; then

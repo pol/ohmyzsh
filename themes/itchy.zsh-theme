@@ -1,3 +1,5 @@
+# Inspired by http://peepcode.com/blog/2012/my-command-line-prompt
+
 local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
 local user="%{$fg[cyan]%}%n%{$reset_color%}"
