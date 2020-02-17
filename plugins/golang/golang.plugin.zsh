@@ -264,13 +264,10 @@ alias gofa='go fmt . ./...'
 alias gog='go get'
 alias goi='go install'
 alias gol='go list'
-<<<<<<< HEAD
-=======
 alias gom='go mod'
 alias gop='cd $GOPATH'
 alias gopb='cd $GOPATH/bin'
 alias gops='cd $GOPATH/src'
->>>>>>> origin/master
 alias gor='go run'
 alias got='go test'
 alias gov='go vet'

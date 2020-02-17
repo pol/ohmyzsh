@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-virtualenvwrapper='virtualenvwrapper.sh'
-
-if (( $+commands[$virtualenvwrapper] )); then
-  function {
-    setopt local_options
-    unsetopt equals
-    source ${${virtualenvwrapper}:c}
-  }
-elif [[ -f "/etc/bash_completion.d/virtualenvwrapper" ]]; then
-  function {
-    setopt local_options
-    unsetopt equals
-    virtualenvwrapper="/etc/bash_completion.d/virtualenvwrapper"
-    source "/etc/bash_completion.d/virtualenvwrapper"
-  }
-else
-  print "[oh-my-zsh] virtualenvwrapper plugin: Cannot find ${virtualenvwrapper}.\n"\
-        "Please install with \`pip install virtualenvwrapper\`" >&2
-  return
-fi
-=======
 function {
     # search in these locations for the init script:
     for f in $commands[virtualenvwrapper_lazy.sh] \
@@ -38,7 +16,6 @@ function {
           "Please install with \`pip install virtualenvwrapper\`" >&2
 }
 
->>>>>>> origin/master
 if ! type workon &>/dev/null; then
   print "[oh-my-zsh] virtualenvwrapper plugin: shell function 'workon' not defined.\n"\
         "Please check ${virtualenvwrapper}" >&2

@@ -1,10 +1,6 @@
 #!/bin/zsh
 
 source_env() {
-<<<<<<< HEAD
-  if [[ -f .env ]]; then
-    source .env
-=======
   if [[ -f $ZSH_DOTENV_FILE ]]; then
     if [ "$ZSH_DOTENV_PROMPT" != "false" ]; then
       # confirm before sourcing file
@@ -28,18 +24,14 @@ source_env() {
       source $ZSH_DOTENV_FILE
       set +a
     fi
->>>>>>> origin/master
   fi
 }
 
 autoload -U add-zsh-hook
 add-zsh-hook chpwd source_env
-<<<<<<< HEAD
-=======
 
 if [[ -z $ZSH_DOTENV_FILE ]]; then
     ZSH_DOTENV_FILE=.env
 fi
 
 source_env
->>>>>>> origin/master
