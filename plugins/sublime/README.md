@@ -5,13 +5,9 @@ available for Linux, macOS, and Windows.
 
 To use the plugin, add `sublime` to the plugins array of your zshrc file:
 
-<<<<<<< HEAD
- * [Sublime Text](http://www.sublimetext.com/)
-=======
 ```zsh
 plugins=(... sublime)
 ```
->>>>>>> origin/master
 
 Sublime Text has to be installed to use the plugin.
 

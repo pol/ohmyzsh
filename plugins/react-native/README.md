@@ -11,24 +11,6 @@ plugins=(... react-native)
 
 ## Aliases
 
-<<<<<<< HEAD
-| Alias       | React Native command                           |
-|:------------|:-----------------------------------------------|
-| **rn**      | `react-native`                                 |
-| **rns**     | `react-native start`                           |
-| **rnlink**  | `react-native link`                            |
-| _App testing_                                                |
-| **rnand**   | `react-native run-android`                     |
-| **rnios**   | `react-native run-ios`                         |
-| **rnios4s** | `react-native run-ios --simulator "iPhone 4s"` |
-| **rnios5**  | `react-native run-ios --simulator "iPhone 5"`  |
-| **rnios5s** | `react-native run-ios --simulator "iPhone 5s"` |
-| **rnios6**  | `react-native run-ios --simulator "iPhone 6"`  |
-| **rnios6s** | `react-native run-ios --simulator "iPhone 6s"` |
-| _Logging_                                                    |
-| **rnland**  | `react-native log-android`                     |
-| **rnlios**  | `react-native log-ios`                         |
-=======
 | Alias          | React Native command                                                         |
 | :------------  | :-------------------------------------------------                           |
 | **rn**         | `react-native`                                                               |
@@ -92,4 +74,3 @@ plugins=(... react-native)
 | **rnaws342**   | `react-native run-ios --simulator "Apple Watch Series 3 - 42mm"`             |
 | **rnaws440**   | `react-native run-ios --simulator "Apple Watch Series 4 - 40mm"`             |
 | **rnaws444**   | `react-native run-ios --simulator "Apple Watch Series 4 - 44mm"`             |
->>>>>>> origin/master

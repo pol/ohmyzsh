@@ -270,19 +270,11 @@ function itunes music() {
 					opt="play"
 				else
 					opt="stop"
-<<<<<<< HEAD
-				fi	
-                  else
-                    opt="set allPlaylists to (get name of every playlist)"
-                  fi
-                ;;
-=======
 				fi
 			else
 				opt="set allPlaylists to (get name of every playlist)"
 			fi
 			;;
->>>>>>> origin/master
 		playing|status)
 			local state=`osascript -e "tell application \"$APP_NAME\" to player state as string"`
 			if [[ "$state" = "playing" ]]; then
@@ -310,7 +302,7 @@ function itunes music() {
 
 			case "$state" in
 				on|off)
-					# Inspired by: http://stackoverflow.com/a/14675583
+					# Inspired by: https://stackoverflow.com/a/14675583
 					osascript 1>/dev/null 2>&1 <<-EOF
 					tell application "System Events" to perform action "AXPress" of (menu item "${state}" of menu "Shuffle" of menu item "Shuffle" of menu "Controls" of menu bar item "Controls" of menu bar 1 of application process "iTunes" )
 EOF
@@ -351,3 +343,8 @@ source ${ZSH}/plugins/osx/spotify
 # Show/hide hidden files in the Finder
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Remove .DS_Store files recursively in a directory, default .
+function rmdsstore() {
+	find "${@:-.}" -type f -name .DS_Store -delete
+}

@@ -7,17 +7,11 @@ function zle-keymap-select() {
   zle -R
 }
 
-<<<<<<< HEAD
-# Ensure that the prompt is redrawn when the terminal size changes.
-TRAPWINCH() {
-  zle &&  zle -R
-=======
 zle -N zle-keymap-select
 
 function vi-accept-line() {
   VI_KEYMAP=main
   zle accept-line
->>>>>>> origin/master
 }
 
 zle -N vi-accept-line

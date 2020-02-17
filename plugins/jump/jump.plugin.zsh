@@ -18,14 +18,9 @@ mark() {
 	else
 		MARK="$1"
 	fi
-<<<<<<< HEAD
-	if read -q \?"Mark $PWD as ${MARK}? (y/n) "; then
-		mkdir -p "$MARKPATH"; ln -s "$PWD" "$MARKPATH/$MARK"
-=======
 	if read -q "?Mark $PWD as ${MARK}? (y/n) "; then
 		command mkdir -p "$MARKPATH"
 		command ln -sfn "$PWD" "$MARKPATH/$MARK"
->>>>>>> origin/master
 	fi
 }
 
@@ -34,9 +29,6 @@ unmark() {
 }
 
 marks() {
-<<<<<<< HEAD
-	for link in $MARKPATH/*(@); do
-=======
 	local link max=0
 	for link in $MARKPATH/{,.}*(@N); do
 		if [[ ${#link:t} -gt $max ]]; then
@@ -45,11 +37,10 @@ marks() {
 	done
 	local printf_markname_template="$(printf -- "%%%us " "$max")"
 	for link in $MARKPATH/{,.}*(@N); do
->>>>>>> origin/master
 		local markname="$fg[cyan]${link:t}$reset_color"
 		local markpath="$fg[blue]$(readlink $link)$reset_color"
-		printf "%s\t" $markname
-		printf "-> %s \t\n" $markpath
+		printf -- "$printf_markname_template" "$markname"
+		printf -- "-> %s\n" "$markpath"
 	done
 }
 

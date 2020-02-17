@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-# To use: add a .lighthouse file into your directory with the URL to the
-# individual project. For example:
-# https://rails.lighthouseapp.com/projects/8994
-# Example usage: http://screencast.com/t/ZDgwNDUwNT
-=======
->>>>>>> origin/master
 open_lighthouse_ticket () {
   if [ ! -f .lighthouse-url ]; then
     echo "There is no .lighthouse-url file in the current directory..."

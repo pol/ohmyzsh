@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-ng_opts='addon asset-sizes b build completion d destroy doc e2e g generate get github-pages:deploy gh-pages:deploy h help i init install lint make-this-awesome new s serve server set t test v version -h --help'
-=======
 ng_opts='addon asset-sizes b build completion d destroy doc e2e g generate get github-pages:deploy gh-pages:deploy h help i init install lint make-this-awesome new s serve server set t test update v version -h --help'
->>>>>>> origin/master
 
 _ng_completion () {
   local words cword opts
@@ -58,6 +53,10 @@ _ng_completion () {
 
     t | test )
       opts='--browsers --colors --config-file --environment --filter --host --launch --log-level --module --path --port --query --reporter --server --silent --test-page --test-port --watch -H -c -cf -e -f -m -r -s -tp -w'
+      ;;
+      
+    update )
+      opts='--all --dryRun --force --from --migrate-only --next --registry --to -d'
       ;;
 
     v | version )

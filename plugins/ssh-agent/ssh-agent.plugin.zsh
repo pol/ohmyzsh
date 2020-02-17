@@ -2,26 +2,15 @@ typeset _agent_forwarding _ssh_env_cache
 
 function _start_agent() {
 	local lifetime
-	local -a identities
-
-	# start ssh-agent and setup environment
-<<<<<<< HEAD
 	zstyle -s :omz:plugins:ssh-agent lifetime lifetime
 
-=======
+	# start ssh-agent and setup environment
 	echo Starting ssh-agent...
->>>>>>> origin/master
 	ssh-agent -s ${lifetime:+-t} ${lifetime} | sed 's/^echo/#echo/' >! $_ssh_env_cache
 	chmod 600 $_ssh_env_cache
 	. $_ssh_env_cache > /dev/null
+}
 
-<<<<<<< HEAD
-	# load identies
-	zstyle -a :omz:plugins:ssh-agent identities identities
-
-	echo starting ssh-agent...
-	ssh-add $HOME/.ssh/${^identities}
-=======
 function _add_identities() {
 	local id line sig lines
 	local -a identities loaded_sigs loaded_ids not_loaded
@@ -60,7 +49,6 @@ function _add_identities() {
 	done
 
 	[[ -n "$not_loaded" ]] && ssh-add ${^not_loaded}
->>>>>>> origin/master
 }
 
 # Get the filename to store/lookup the environment from
@@ -75,13 +63,20 @@ if [[ $_agent_forwarding == "yes" && -n "$SSH_AUTH_SOCK" ]]; then
 elif [[ -f "$_ssh_env_cache" ]]; then
 	# Source SSH settings, if applicable
 	. $_ssh_env_cache > /dev/null
-	ps x | grep ssh-agent | grep -q $SSH_AGENT_PID || {
+	if [[ $USER == "root" ]]; then
+		FILTER="ax"
+	else
+		FILTER="x"
+	fi
+	ps $FILTER | grep ssh-agent | grep -q $SSH_AGENT_PID || {
 		_start_agent
 	}
 else
 	_start_agent
 fi
 
+_add_identities
+
 # tidy up after ourselves
 unset _agent_forwarding _ssh_env_cache
-unfunction _start_agent
+unfunction _start_agent _add_identities

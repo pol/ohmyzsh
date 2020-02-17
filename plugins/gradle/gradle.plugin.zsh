@@ -1,8 +1,6 @@
 ##############################################################################
 # A descriptive listing of core Gradle commands
 ############################################################################
-<<<<<<< HEAD
-=======
 
 gradle-or-gradlew() {
 	if [ -f ./gradlew ] ; then
@@ -15,7 +13,6 @@ gradle-or-gradlew() {
 
 alias gradle=gradle-or-gradlew;
 
->>>>>>> origin/master
 function _gradle_core_commands() {
     local ret=1 state
     _arguments ':subcommand:->subcommand' && ret=0

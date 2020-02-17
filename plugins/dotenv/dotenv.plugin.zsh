@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 source_env() {
   if [[ -f $ZSH_DOTENV_FILE ]]; then
     if [ "$ZSH_DOTENV_PROMPT" != "false" ]; then

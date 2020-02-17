@@ -17,13 +17,8 @@ def get_tagname_or_hash():
     tags_cmd = ['git', 'for-each-ref', '--points-at=HEAD', '--count=2', '--sort=-version:refname', '--format=%(refname:short)', 'refs/tags']
     tags = check_output(tags_cmd).split()
 
-<<<<<<< HEAD
-    if tagname:
-        return tagname
-=======
     if tags:
         return tags[0] + ('+' if len(tags) > 1 else '')
->>>>>>> origin/master
     elif hash_:
         return hash_
     return None

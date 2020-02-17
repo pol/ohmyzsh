@@ -1,9 +1,6 @@
 # This plugin loads pyenv into the current shell and provides prompt info via
 # the 'pyenv_prompt_info' function. Also loads pyenv-virtualenv if available.
 
-<<<<<<< HEAD
-if (( $+commands[pyenv] )); then
-=======
 # Load pyenv only if command not already available
 command -v pyenv &> /dev/null && FOUND_PYENV=1 || FOUND_PYENV=0
 
@@ -28,7 +25,6 @@ if [[ $FOUND_PYENV -ne 1 ]]; then
 fi
 
 if [[ $FOUND_PYENV -eq 1 ]]; then
->>>>>>> origin/master
     eval "$(pyenv init - zsh)"
     if (( $+commands[pyenv-virtualenv-init] )); then
         eval "$(pyenv virtualenv-init - zsh)"
@@ -42,8 +38,5 @@ else
         echo "system: $(python -V 2>&1 | cut -f 2 -d ' ')"
     }
 fi
-<<<<<<< HEAD
-=======
 
 unset FOUND_PYENV pyenvdirs dir
->>>>>>> origin/master

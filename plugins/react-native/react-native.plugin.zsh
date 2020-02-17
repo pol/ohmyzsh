@@ -14,8 +14,6 @@ alias rnios5s='react-native run-ios --simulator "iPhone 5s"'
 alias rnios6='react-native run-ios --simulator "iPhone 6"'
 alias rnios6p='react-native run-ios --simulator "iPhone 6 Plus"'
 alias rnios6s='react-native run-ios --simulator "iPhone 6s"'
-<<<<<<< HEAD
-=======
 alias rnios6sp='react-native run-ios --simulator "iPhone 6s Plus"'
 alias rnios7='react-native run-ios --simulator "iPhone 7"'
 alias rnios7p='react-native run-ios --simulator "iPhone 7 Plus"'
@@ -29,7 +27,6 @@ alias rniosxr='react-native run-ios --simulator "iPhone Xʀ"'
 alias rnios11='react-native run-ios --simulator "iPhone 11"'
 alias rnios11p='react-native run-ios --simulator "iPhone 11 Pro"'
 alias rnios11pm='react-native run-ios --simulator "iPhone 11 Pro Max"'
->>>>>>> origin/master
 
 
 # iPad

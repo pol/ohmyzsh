@@ -46,25 +46,10 @@ alias stn=create_project
       "$(cygpath "$ProgramW6432/Sublime Text 2")/subl.exe"
       "$(cygpath "$ProgramW6432/Sublime Text 3")/subl.exe"
     )
-<<<<<<< HEAD
-    for _sublime_path in $_sublime_darwin_paths; do
-        if [[ -a $_sublime_path ]]; then
-            subl () { "$_sublime_path" $* }
-            alias st=subl
-            break
-        fi
-    done
-elif [[ "$OSTYPE" = 'cygwin' ]]; then
-    local sublime_cygwin_paths
-    sublime_cygwin_paths=(
-        "$(cygpath $ProgramW6432/Sublime\ Text\ 2)/sublime_text.exe"
-        "$(cygpath $ProgramW6432/Sublime\ Text\ 3)/sublime_text.exe"
-=======
   elif [[ "$OSTYPE" = msys ]]; then
     _sublime_paths=(
       "/c/Program Files/Sublime Text 2/subl.exe"
       "/c/Program Files/Sublime Text 3/subl.exe"
->>>>>>> origin/master
     )
   fi
 

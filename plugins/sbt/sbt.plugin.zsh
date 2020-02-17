@@ -7,16 +7,11 @@
  
 # aliases - mnemonic: prefix is 'sb'
 alias sbc='sbt compile'
+alias sbcc='sbt clean compile'
 alias sbco='sbt console'
-<<<<<<< HEAD
-alias sbcq='sbt console-quick'
-alias sbcl='sbt clean'
-alias sbcp='sbt console-project'
-=======
 alias sbcq='sbt consoleQuick'
 alias sbcln='sbt clean'
 alias sbcp='sbt consoleProject'
->>>>>>> origin/master
 alias sbd='sbt doc'
 alias sbdc='sbt dist:clean'
 alias sbdi='sbt dist'

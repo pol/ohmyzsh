@@ -16,12 +16,8 @@ _sbt_commands=(
   'packageDoc:produce a doc artifact, such as a jar containing API docs'
   'packageSrc:produce a source artifact, such as a jar containing sources'
   'publish:publish artifacts to a repository'
-<<<<<<< HEAD
-  'publish-local:publish artifacts to the local repository'
-=======
   'publishLocal:publish artifacts to the local repository'
   'publishM2:publish artifacts to the local Maven 2 repository'
->>>>>>> origin/master
   'run:run a main class'
   'runMain:run the main class selected by the first argument'
   'test:execute all tests'

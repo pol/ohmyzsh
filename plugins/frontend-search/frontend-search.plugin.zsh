@@ -44,18 +44,6 @@ function frontend() {
   # define search context URLS
   typeset -A urls
   urls=(
-<<<<<<< HEAD
-    angularjs      'https://google.com/search?as_sitesearch=angularjs.org&as_q='
-    aurajs         'http://aurajs.com/api/#stq='
-    bem            'https://google.com/search?as_sitesearch=bem.info&as_q='
-    bootsnipp      'http://bootsnipp.com/search?q='
-    caniuse        'http://caniuse.com/#search='
-    codepen        'http://codepen.io/search?q='
-    compassdoc     'http://compass-style.org/search?q='
-    cssflow        'http://www.cssflow.com/search?q='
-    dartlang       'https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:'
-    emberjs        'http://emberjs.com/api/#stp=1&stq='
-=======
     angular        'https://angular.io/?search='
     angularjs      $(_frontend_fallback 'angularjs.org')
     bem            $(_frontend_fallback 'bem.info')
@@ -68,7 +56,6 @@ function frontend() {
     dartlang       'https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:'
     emberjs        $(_frontend_fallback 'emberjs.com/')
     flowtype       $(_frontend_fallback 'flow.org/en/docs/')
->>>>>>> origin/master
     fontello       'http://fontello.com/#search='
     github         'https://github.com/search?q='
     html5please    'https://html5please.com/#'
@@ -79,16 +66,10 @@ function frontend() {
     nodejs         $(_frontend_fallback 'nodejs.org/en/docs/')
     npmjs          'https://www.npmjs.com/search?q='
     qunit          'https://api.qunitjs.com/?s='
-<<<<<<< HEAD
-    reactjs        'https://google.com/search?as_sitesearch=facebook.github.io/react&as_q='
-    smacss         'https://google.com/search?as_sitesearch=smacss.com&as_q='
-    stackoverflow  'http://stackoverflow.com/search?q='
-=======
     reactjs        $(_frontend_fallback 'reactjs.org/')
     smacss         $(_frontend_fallback 'smacss.com')
     stackoverflow  'https://stackoverflow.com/search?q='
     typescript     $(_frontend_fallback 'www.typescriptlang.org/docs')
->>>>>>> origin/master
     unheap         'http://www.unheap.com/?s='
     vuejs          $(_frontend_fallback 'vuejs.org')
   )

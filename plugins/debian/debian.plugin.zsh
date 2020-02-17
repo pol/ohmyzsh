@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-# Authors:
-# https://github.com/AlexBio
-# https://github.com/dbb
-# https://github.com/Mappleconfusers
-#
-# Debian-related zsh aliases and functions for zsh
-
-# Use aptitude if installed, or apt-get if not.
-# You can just set apt_pref='apt-get' to override it.
-if [[ -e $( which -p aptitude 2>&1 ) ]]; then
-    apt_pref='aptitude'
-    apt_upgr='safe-upgrade'
-else
-    apt_pref='apt-get'
-    apt_upgr='upgrade'
-=======
 # Use apt or aptitude if installed, fallback is apt-get
 # You can just set apt_pref='apt-get' to override it.
 
@@ -29,7 +12,6 @@ if [[ -z $apt_pref || -z $apt_upgr ]]; then
         apt_pref='apt-get'
         apt_upgr='upgrade'
     fi
->>>>>>> origin/master
 fi
 
 # Use sudo by default if it's installed
@@ -190,13 +172,8 @@ function apt-copy() {
 #   apt-history remove
 #   apt-history rollback
 #   apt-history list
-<<<<<<< HEAD
-# Based On: http://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
-apt-history () {
-=======
 # Based On: https://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
 function apt-history() {
->>>>>>> origin/master
   case "$1" in
     install)
       zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)

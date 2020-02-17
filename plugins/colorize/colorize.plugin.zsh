@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-# Plugin for highlighting file content
-# Plugin highlights file content based on the filename extension.
-# If no highlighting method supported for given extension then it tries 
-# guess it by looking for file content.
-
-#easier alias to use plugin
-alias ccat='colorize_via_pygmentize'
-
-colorize_via_pygmentize() {
-    if [ ! -x "$(which pygmentize)" ]; then
-        echo "package \'Pygments\' is not installed!"
-        return -1
-=======
 # Easier alias to use the plugin
 alias ccat="colorize_cat"
 alias cless="colorize_less"
@@ -39,7 +25,6 @@ colorize_check_requirements() {
     elif (( $+commands["$ZSH_COLORIZE_TOOL"] )); then
         echo "Package '$ZSH_COLORIZE_TOOL' is not installed!" >&2
         return 1
->>>>>>> origin/master
     fi
 }
 
@@ -56,18 +41,6 @@ colorize_cat() {
         ZSH_COLORIZE_STYLE="emacs"
     fi
 
-<<<<<<< HEAD
-    if [ $# -eq 0 ]; then
-        pygmentize -g $@
-    fi
-
-    for FNAME in $@
-    do
-        filename=$(basename "$FNAME")
-        lexer=`pygmentize -N \"$filename\"`
-        if [ "Z$lexer" != "Ztext" ]; then
-            pygmentize -l $lexer "$FNAME"
-=======
     # Use stdin if no arguments have been passed.
     if [ $# -eq 0 ]; then
         if [[ "$ZSH_COLORIZE_TOOL" == "pygmentize" ]]; then
@@ -88,7 +61,6 @@ colorize_cat() {
             else
                 pygmentize -O style="$ZSH_COLORIZE_STYLE" -g "$FNAME"
             fi
->>>>>>> origin/master
         else
             chroma --style="$ZSH_COLORIZE_STYLE" "$FNAME"
         fi
