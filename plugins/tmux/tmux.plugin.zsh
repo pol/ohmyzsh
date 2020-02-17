@@ -9,6 +9,7 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
+<<<<<<< HEAD
 # Only run if tmux is actually installed
 if which tmux &> /dev/null
 	then
@@ -36,10 +37,54 @@ if which tmux &> /dev/null
 	# systems without the proper terminfo
 	[[ -n "$ZSH_TMUX_FIXTERM_WITH_256COLOR" ]] || ZSH_TMUX_FIXTERM_WITH_256COLOR="screen-256color"
 
+=======
+# CONFIGURATION VARIABLES
+# Automatically start tmux
+: ${ZSH_TMUX_AUTOSTART:=false}
+# Only autostart once. If set to false, tmux will attempt to
+# autostart every time your zsh configs are reloaded.
+: ${ZSH_TMUX_AUTOSTART_ONCE:=true}
+# Automatically connect to a previous session if it exists
+: ${ZSH_TMUX_AUTOCONNECT:=true}
+# Automatically close the terminal when tmux exits
+: ${ZSH_TMUX_AUTOQUIT:=$ZSH_TMUX_AUTOSTART}
+# Set term to screen or screen-256color based on current terminal support
+: ${ZSH_TMUX_FIXTERM:=true}
+# Set '-CC' option for iTerm2 tmux integration
+: ${ZSH_TMUX_ITERM2:=false}
+# The TERM to use for non-256 color terminals.
+# Tmux states this should be screen, but you may need to change it on
+# systems without the proper terminfo
+: ${ZSH_TMUX_FIXTERM_WITHOUT_256COLOR:=screen}
+# The TERM to use for 256 color terminals.
+# Tmux states this should be screen-256color, but you may need to change it on
+# systems without the proper terminfo
+: ${ZSH_TMUX_FIXTERM_WITH_256COLOR:=screen-256color}
+# Set the configuration path
+: ${ZSH_TMUX_CONFIG:=$HOME/.tmux.conf}
+# Set -u option to support unicode
+: ${ZSH_TMUX_UNICODE:=false}
+
+# Determine if the terminal supports 256 colors
+if [[ $terminfo[colors] == 256 ]]; then
+  export ZSH_TMUX_TERM=$ZSH_TMUX_FIXTERM_WITH_256COLOR
+else
+  export ZSH_TMUX_TERM=$ZSH_TMUX_FIXTERM_WITHOUT_256COLOR
+fi
+
+# Set the correct local config file to use.
+if [[ "$ZSH_TMUX_ITERM2" == "false" && -e "$ZSH_TMUX_CONFIG" ]]; then
+  export ZSH_TMUX_CONFIG
+  export _ZSH_TMUX_FIXED_CONFIG="${0:h:a}/tmux.extra.conf"
+else
+  export _ZSH_TMUX_FIXED_CONFIG="${0:h:a}/tmux.only.conf"
+fi
+>>>>>>> origin/master
 
 	# Get the absolute path to the current directory
 	local zsh_tmux_plugin_path="$(cd "$(dirname "$0")" && pwd)"
 
+<<<<<<< HEAD
 	# Determine if the terminal supports 256 colors
 	if [[ `tput colors` == "256" ]]
 	then
@@ -47,6 +92,12 @@ if which tmux &> /dev/null
 	else
 		export ZSH_TMUX_TERM=$ZSH_TMUX_FIXTERM_WITHOUT_256COLOR
 	fi
+=======
+  local -a tmux_cmd
+  tmux_cmd=(command tmux)
+  [[ "$ZSH_TMUX_ITERM2" == "true" ]] && tmux_cmd+=(-CC)
+  [[ "$ZSH_TMUX_UNICODE" == "true" ]] && tmux_cmd+=(-u)
+>>>>>>> origin/master
 
 	# Set the correct local config file to use.
     if [[ "$ZSH_TMUX_ITERM2" == "false" ]] && [[ -f $HOME/.tmux.conf || -h $HOME/.tmux.conf ]]
@@ -58,6 +109,7 @@ if which tmux &> /dev/null
 		export _ZSH_TMUX_FIXED_CONFIG="$zsh_tmux_plugin_path/tmux.only.conf"
 	fi
 
+<<<<<<< HEAD
 	# Wrapper function for tmux.
 	function _zsh_tmux_plugin_run()
 	{
@@ -76,6 +128,17 @@ if which tmux &> /dev/null
 			[[ "$ZSH_TMUX_AUTOQUIT" == "true" ]] && exit
 		fi
 	}
+=======
+  # If failed, just run tmux, fixing the TERM variable if requested.
+  if [[ $? -ne 0 ]]; then
+    if [[ "$ZSH_TMUX_FIXTERM" == "true" ]]; then
+      tmux_cmd+=(-f "$_ZSH_TMUX_FIXED_CONFIG")
+    elif [[ -e "$ZSH_TMUX_CONFIG" ]]; then
+      tmux_cmd+=(-f "$ZSH_TMUX_CONFIG")
+    fi
+    $tmux_cmd new-session
+  fi
+>>>>>>> origin/master
 
 	# Use the completions for tmux for our function
 	compdef _tmux _zsh_tmux_plugin_run

@@ -1,5 +1,13 @@
 #compdef tmuxinator mux
 #autoload
+<<<<<<< HEAD
+=======
+
+_tmuxinator() {
+  local commands projects
+  commands=(${(f)"$(tmuxinator commands zsh)"})
+  projects=(${(f)"$(tmuxinator completions start)"})
+>>>>>>> origin/master
 
 local curcontext="$curcontext" state line ret=1
 local -a _configs
@@ -37,4 +45,8 @@ case $state in
     ;;
 esac
 
+<<<<<<< HEAD
 return ret
+=======
+compdef _tmuxinator tmuxinator
+>>>>>>> origin/master

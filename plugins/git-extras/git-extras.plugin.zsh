@@ -295,6 +295,7 @@ zstyle ':completion:*:*:git:*' user-commands \
     alias:'define, search and show aliases' \
     archive-file:'export the current HEAD of the git repository to a archive' \
     back:'undo and stage latest commits' \
+<<<<<<< HEAD
     bug:'create a bug branch' \
     changelog:'populate changelog file with commits since the previous tag' \
     commits-since:'list commits since a given date' \
@@ -315,6 +316,36 @@ zstyle ':completion:*:*:git:*' user-commands \
     ignore:'add patterns to .gitignore' \
     info:'show info about the repository' \
     local-commits:'list unpushed commits on the local branch' \
+=======
+    bug:'create bug branch' \
+    bulk:'run bulk commands' \
+    changelog:'generate a changelog report' \
+    chore:'create chore branch' \
+    clear-soft:'soft clean up a repository' \
+    clear:'rigorously clean up a repository' \
+    commits-since:'show commit logs since some date' \
+    contrib:'show user contributions' \
+    count:'show commit count' \
+    create-branch:'create branches' \
+    delete-branch:'delete branches' \
+    delete-merged-branches:'delete merged branches' \
+    delete-submodule:'delete submodules' \
+    delete-tag:'delete tags' \
+    delta:'lists changed files' \
+    effort:'show effort statistics on file(s)' \
+    extras:'awesome git utilities' \
+    feature:'create/merge feature branch' \
+    force-clone:'overwrite local repositories with clone' \
+    fork:'fork a repo on GitHub' \
+    fresh-branch:'create fresh branches' \
+    gh-pages:'create the GitHub pages branch' \
+    graft:'merge and destroy a given branch' \
+    guilt:'calculate change between two revisions' \
+    ignore-io:'get sample gitignore file' \
+    ignore:'add .gitignore patterns' \
+    info:'returns information on current repository' \
+    local-commits:'list local commits' \
+>>>>>>> origin/master
     lock:'lock a file excluded from version control' \
     locked:'ls files that have been locked' \
     missing:'show commits missing from another branch' \

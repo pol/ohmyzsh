@@ -122,6 +122,7 @@ function listMavenCompletions {
         # idea
         idea:clean idea:idea
 
+<<<<<<< HEAD
         # jetty
         jetty:run jetty:run-exploded
         # cargo
@@ -146,6 +147,72 @@ function listMavenCompletions {
         scm:add scm:bootstrap scm:branch scm:changelog scm:check-local-modification scm:checkin scm:checkout scm:diff scm:edit scm:export scm:list scm:remove scm:status scm:tag scm:unedit scm:update scm:update-subprojects scm:validate
         # buildnumber
         buildnumber:create buildnumber:create-timestamp buildnumber:help buildnumber:hgchangeset
+=======
+		# sonar
+		sonar:sonar
+		# license
+		license:format license:check
+		# hibernate3
+		hibernate3:hbm2ddl hibernate3:help
+		# liquibase
+		liquibase:changelogSync liquibase:changelogSyncSQL liquibase:clearCheckSums liquibase:dbDoc liquibase:diff liquibase:dropAll liquibase:help liquibase:migrate liquibase:listLocks liquibase:migrateSQL liquibase:releaseLocks liquibase:rollback liquibase:rollbackSQL liquibase:status liquibase:tag liquibase:update liquibase:updateSQL liquibase:updateTestingRollback
+		# flyway
+		flyway:clean flyway:history flyway:init flyway:migrate flyway:status flyway:validate
+		# gwt
+		gwt:browser gwt:clean gwt:compile gwt:compile-report gwt:css gwt:debug gwt:eclipse gwt:eclipseTest gwt:generateAsync gwt:help gwt:i18n gwt:mergewebxml gwt:resources gwt:run gwt:sdkInstall gwt:source-jar gwt:soyc gwt:test
+		# asciidoctor
+		asciidoctor:process-asciidoc asciidoctor:auto-refresh asciidoctor:http asciidoctor:zip
+		# compiler
+		compiler:compile compiler:testCompile
+		# resources
+		resources:resources resources:testResources resources:copy-resources
+		# verifier
+		verifier:verify
+		# jar
+		jar:jar jar:test-jar
+		# rar
+		rar:rar
+		# acr
+		acr:acr
+		# shade
+		shade:shade
+		# changelog
+		changelog:changelog changelog:dev-activity changelog:file-activity
+		# changes
+		changes:announcement-mail changes:announcement-generate changes:changes-check changes:changes-validate changes:changes-report changes:jira-report changes:trac-report changes:github-report
+		# doap
+		doap:generate
+		# docck
+		docck:check
+		# jdeps
+		jdeps:jdkinternals jdeps:test-jdkinternals
+		# linkcheck
+		linkcheck:linkcheck
+		# project-info-reports
+		project-info-reports:cim project-info-reports:dependencies project-info-reports:dependency-convergence project-info-reports:dependency-info project-info-reports:dependency-management project-info-reports:distribution-management project-info-reports:help project-info-reports:index project-info-reports:issue-tracking project-info-reports:license project-info-reports:mailing-list project-info-reports:modules project-info-reports:plugin-management project-info-reports:plugins project-info-reports:project-team project-info-reports:scm project-info-reports:summary
+		# surefire-report
+		surefire-report:failsafe-report-only surefire-report:report surefire-report:report-only
+		# invoker
+		invoker:install invoker:integration-test invoker:verify invoker:run
+		# jarsigner
+		jarsigner:sign jarsigner:verify
+		# patch
+		patch:apply
+		# pdf
+		pdf:pdf
+		# plugin
+		plugin:descriptor plugin:report plugin:updateRegistry plugin:addPluginArtifactMetadata plugin:helpmojo
+		# remote-resources
+		remote-resources:bundle remote-resources:process
+		# scm-publish
+		scm-publish:help scm-publish:publish-scm scm-publish:scmpublish
+		# stage
+		stage:copy
+		# toolchain
+		toolchain:toolchain
+                #liberty
+                liberty:clean-server liberty:compile-jsp liberty:configure-arquillian liberty:create-server liberty:debug liberty:debug-server liberty:deploy liberty:dev liberty:display-url liberty:dump-server liberty:install-apps liberty:install-feature liberty:install-server liberty:java-dump-server liberty:package-server liberty:run liberty:run-server liberty:server-status liberty:start liberty:start-server liberty:status liberty:stop liberty:stop-server liberty:test-start-server liberty:test-stop-server liberty:undeploy liberty:uninstall-feature
+>>>>>>> origin/master
 
         # war
         war:war war:exploded war:inplace war:manifest

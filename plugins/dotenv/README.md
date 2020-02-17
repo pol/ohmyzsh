@@ -31,4 +31,35 @@ MONGO_URI=mongodb://127.0.0.1:27017
 PORT=3001
 ```
 
+<<<<<<< HEAD
 **It's strongly recommended to add `.env` file to `.gitignore`**, because usually it contains sensitive information such as your credentials, secret keys, passwords etc. You don't want to commit this file, it supposed to be local only.
+=======
+## Plugin options
+
+### ZSH_DOTENV_FILE
+
+You can also modify the name of the file to be loaded with the variable `ZSH_DOTENV_FILE`.
+If the variable isn't set, the plugin will default to use `.env`.
+For example, this will make the plugin look for files named `.dotenv` and load them:
+
+```
+# in ~/.zshrc, before Oh My Zsh is sourced:
+ZSH_DOTENV_FILE=.dotenv
+```
+
+### ZSH_DOTENV_PROMPT
+
+Set `ZSH_DOTENV_PROMPT=false` in your zshrc file if you don't want the confirmation message.
+
+## Version Control
+
+**It's strongly recommended to add `.env` file to `.gitignore`**, because usually it contains sensitive information such as your credentials, secret keys, passwords etc. You don't want to commit this file, it's supposed to be local only.
+
+## Disclaimer
+
+This plugin only sources the `.env` file. Nothing less, nothing more. It doesn't do any checks. It's designed to be the fastest and simplest option. You're responsible for the `.env` file content. You can put some code (or weird symbols) there, but do it on your own risk. `dotenv` is the basic tool, yet it does the job.
+
+If you need more advanced and feature-rich ENV management, check out these awesome projects:
+* [direnv](https://github.com/direnv/direnv)
+* [zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv)
+>>>>>>> origin/master
