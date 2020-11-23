@@ -44,8 +44,8 @@ symbol = "➜"     # The "symbol" segment is being set to "➜"
 symbol = "🛠 "  # A hard hat or construction sign might be just as good
 
 [ruby]
-#symbol = "🦑"  # I really like cephalopods
-symbol = "₹"    # Rupee rhymes with ruby
+symbol = "🦑"  # I really like cephalopods
+#symbol = "₹"    # Rupee rhymes with ruby
 
 [env_var]
 variable = "GK_PROFILE"
