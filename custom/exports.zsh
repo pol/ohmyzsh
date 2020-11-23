@@ -1,0 +1,4 @@
+export AWS_VAULT_BACKEND=keychain
+export GITHUB_TOKEN=0161fbd09643a318c149112127e3f4a480ac2fca
+export JENKINS_USERNAME='pol.llovet@auth0.com'
+export JENKINS_TOKEN=112d0ec1a2b92aa5d3ee4f1d78aee299cf
