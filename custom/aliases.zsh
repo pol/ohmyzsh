@@ -109,5 +109,7 @@ alias backup_minecraft="tar czvf  ~/Minecraft\ Backups/`date +%Y%m%d-saves`.tgz 
 alias myip="curl ifconfig.me"
 alias gobruch="cd ~/auth0/psaas-bruch && bruch unlock"
 alias bu="cd ~/auth0/psaas-bruch && bruch unlock"
+alias lg="lazygit"
+alias ff="/Applications/Firefox.app/Contents/MacOS/firefox -P"
 export PATH="~/auth0/psaas-release:~/.local/bin:/usr/local/opt/curl/bin:~/auth0/teleport/current:$PATH"
 
