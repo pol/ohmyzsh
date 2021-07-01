@@ -16,6 +16,22 @@ awsv () {
   exec aws-vault exec "${AWS_DEFAULT_PROFILE:-work}" -- /usr/local/bin/aws "$@"
 }
 
+dead-mirrors () {
+	if [ "$1" = '-h' ] || [ -z "$1" ]; then
+    echo "usage: dead-mirrors [prod|stage|dev]"; return
+  fi
+
+  if [ -z "$(dig +short apt-mirror.int.auth0.com)" ]; then 
+    echo "Not connected to public-cloud vpn!"; return 
+  fi
+  
+  for i in $(ssh ubuntu@apt-mirror.int.auth0.com sudo ls /var/mirror); do
+    if ! tarball "${1}" "${i}" full > /dev/null; then
+      echo "${i}"
+    fi
+  done 
+}
+
 psaas-ami () {
   aws ec2 describe-images --owners self --filters "Name=name,Values=*-release-$1" --region us-east-1 --output=text  | grep ami | awk '{print $6 " " $9}'
 }
