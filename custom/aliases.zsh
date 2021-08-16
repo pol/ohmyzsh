@@ -95,7 +95,7 @@ alias tfwd='terraform workspace delete'
 alias tfws='terraform workspace select'
 
 # Silly
-alias clear='timeout 2 cmatrix; clear'
+#alias clear='timeout 2 cmatrix; clear'
 
 #alias pip="sudo -H pip"
 alias flush_dns_cache="sudo killall -HUP mDNSResponder"
@@ -110,5 +110,6 @@ alias gobruch="cd ~/auth0/psaas-bruch && bruch unlock"
 alias bu="cd ~/auth0/psaas-bruch && bruch unlock"
 alias lg="lazygit"
 alias ff="/Applications/Firefox.app/Contents/MacOS/firefox -P"
+alias zen="/Users/pol/auth0/psaas-zen/zen"
 export PATH="~/auth0/psaas-release:~/.local/bin:/usr/local/opt/curl/bin:~/auth0/teleport/current:$PATH"
 
