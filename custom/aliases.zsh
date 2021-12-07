@@ -111,5 +111,7 @@ alias bu="cd ~/auth0/psaas-bruch && bruch unlock"
 alias lg="lazygit"
 alias ff="/Applications/Firefox.app/Contents/MacOS/firefox -P"
 alias zen="/Users/pol/auth0/psaas-zen/zen"
+alias cda0c="cd /Users/pol/auth0/auth0-configuration"
+alias scanfix="sudo chown -R pol /Users/pol/Public/*.*"
 export PATH="~/auth0/psaas-release:~/.local/bin:/usr/local/opt/curl/bin:~/auth0/teleport/current:$PATH"
 
