@@ -1,43 +1,73 @@
 # Don't print a new line at the start of the prompt
 # add_newline = false
 
-format = "$all"
+#format = "$all"
+format = """
+$username\
+$hostname\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$env_var\
+$character"""
 
-# prompt_order = [
-#     "username",
-#     "hostname",
-#     "kubernetes",
-#     "directory",
-#     "git_branch",
-#     "git_commit",
-#     "git_state",
-#     "git_status",
-#     "hg_branch",
-#     "package",
-#     "dotnet",
-#     "elm",
-#     "golang",
-#     "haskell",
-#     "java",
-#     "nodejs",
-#     "php",
-#     "python",
-#     "ruby",
-#     "rust",
-#     "terraform",
-#     "nix_shell",
-#     "conda",
-#     "memory_usage",
-#     "aws",
-#     "crystal",
-#     "line_break",
-#     "cmd_duration",
-#     "env_var",
-#     "jobs",
-#     "battery",
-#     "time",
-#     "character",
-# ]
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"

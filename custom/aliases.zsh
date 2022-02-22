@@ -105,13 +105,13 @@ alias known='vim ~/.ssh/known_hosts'
 alias consul_clear_reminders="ssh consul-b-1.av 'CONSUL_HTTP_TOKEN=07440af7-04d1-03df-7a35-f4a148a8b28d consul kv delete --recurse consul-alerts/reminders/'"
 alias psql='/Applications/Postgres.app/Contents/Versions/latest/bin/psql'
 alias backup_minecraft="tar czvf  ~/Minecraft\ Backups/`date +%Y%m%d-saves`.tgz ~/Library/Application\ Support/minecraft/saves"
-alias myip="curl ifconfig.me"
+alias myip="curl -s ifconfig.me | function() { read ip; echo $ip >&1; echo $ip >&2 } | pbcopy"
 alias gobruch="cd ~/auth0/psaas-bruch && bruch unlock"
 alias bu="cd ~/auth0/psaas-bruch && bruch unlock"
 alias lg="lazygit"
 alias ff="/Applications/Firefox.app/Contents/MacOS/firefox -P"
 alias zen="/Users/pol/auth0/psaas-zen/zen"
 alias cda0c="cd /Users/pol/auth0/auth0-configuration"
-alias scanfix="sudo chown -R pol /Users/pol/Public/*.*"
+alias scanfix="sudo chown pol /Users/pol/Public/*.*"
 export PATH="~/auth0/psaas-release:~/.local/bin:/usr/local/opt/curl/bin:~/auth0/teleport/current:$PATH"
 

@@ -1,0 +1,1 @@
+source <(jj completion zsh)
