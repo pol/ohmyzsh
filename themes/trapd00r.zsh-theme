@@ -21,20 +21,63 @@
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-local c0=$( printf "\e[m")
-local c1=$( printf "\e[38;5;245m")
-local c2=$( printf "\e[38;5;250m")
-local c3=$( printf "\e[38;5;242m")
-local c4=$( printf "\e[38;5;197m")
-local c5=$( printf "\e[38;5;225m")
-local c6=$( printf "\e[38;5;240m")
-local c7=$( printf "\e[38;5;242m")
-local c8=$( printf "\e[38;5;244m")
-local c9=$( printf "\e[38;5;162m")
-local c10=$(printf "\e[1m")
-local c11=$(printf "\e[38;5;208m\e[1m")
-local c12=$(printf "\e[38;5;142m\e[1m")
-local c13=$(printf "\e[38;5;196m\e[1m")
+local c0=$'\e[m'
+local c1=$'\e[38;5;245m'
+local c2=$'\e[38;5;250m'
+local c3=$'\e[38;5;242m'
+local c4=$'\e[38;5;197m'
+local c5=$'\e[38;5;225m'
+local c6=$'\e[38;5;240m'
+local c7=$'\e[38;5;242m'
+local c8=$'\e[38;5;244m'
+local c9=$'\e[38;5;162m'
+local c10=$'\e[1m'
+local c11=$'\e[38;5;208m\e[1m'
+local c12=$'\e[38;5;142m\e[1m'
+local c13=$'\e[38;5;196m\e[1m'
+
+
+zsh_path() {
+  setopt localoptions nopromptsubst
+
+  local colors
+  colors=$(echoti colors)
+
+  local -A yellow
+  yellow=(
+    1  '%F{228}'   2  '%F{222}'   3  '%F{192}'   4  '%F{186}'
+    5  '%F{227}'   6  '%F{221}'   7  '%F{191}'   8  '%F{185}'
+    9  '%F{226}'   10  '%F{220}'   11  '%F{190}'   12  '%F{184}'
+    13  '%F{214}'   14  '%F{178}'  15  '%F{208}'   16  '%F{172}'
+    17  '%F{202}'   18  '%F{166}'
+  )
+
+  local dir i=1
+  for dir (${(s:/:)PWD}); do
+    if [[ $i -eq 1 ]]; then
+      if [[ $colors -ge 256 ]]; then
+        print -Pn "%F{065}%B /%b"
+      else
+        print -Pn "\e[31;1m /"
+      fi
+    else
+      if [[ $colors -ge 256 ]]; then
+        print -Pn "${yellow[$i]:-%f} » "
+      else
+        print -Pn "%F{yellow} > "
+      fi
+    fi
+
+    (( i++ ))
+
+    if [[ $colors -ge 256 ]]; then
+      print -Pn "%F{065}$dir"
+    else
+      print -Pn "%F{blue}$dir"
+    fi
+  done
+  print -Pn "%f"
+}
 
 
 # We don't want to use the extended colorset in the TTY / VC.
