@@ -3,8 +3,8 @@ export GITHUB_TOKEN=0161fbd09643a318c149112127e3f4a480ac2fca
 export JENKINS_USERNAME='pol.llovet@auth0.com'
 export JENKINS_TOKEN=112d0ec1a2b92aa5d3ee4f1d78aee299cf
 export SHARED_VAULT="PSaaS Engineering"
-#export TFENV_ARCH=arm64
-#export ARCHFLAGS='-arch arm64'
+export TFENV_ARCH=arm64
+export ARCHFLAGS='-arch arm64'
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
