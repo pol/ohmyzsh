@@ -44,3 +44,8 @@ psaas-promote-mirror () {
   fi
 }
 
+dota-hero () {
+ idx=$(cat ~/.dota-hero-idx)
+ sed -n "${idx}p" ~/.dota-heroes 
+ echo -n "$(expr $idx + 1)" > ~/.dota-hero-idx
+}

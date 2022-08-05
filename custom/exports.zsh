@@ -10,11 +10,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
-export PSAAS_AMI="u16-release-$(test -f ~/.psaas_releases.json || zen release list -j > ~/.psaas_releases.json && jq -r '.version' ~/.psaas_releases.json | tail -1)"
+export PSAAS_AMI="u16-release-30282.1839"
 export BOOST_LIB_DIR="/opt/homebrew/Cellar/boost/1.76.0/lib"
 export BOOST_INC_DIR="/opt/homebrew/Cellar/boost/1.76.0/include"
 export boost="/opt/homebrew/Cellar/boost/1.76.0/include/boost"
 export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-16.jdk/Contents/Home
-export PATH="$JAVA_HOME/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
+export PATH=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/:$PATH

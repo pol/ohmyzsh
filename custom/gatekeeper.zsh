@@ -5,12 +5,12 @@ function gkc(){
 function gk() {
     exe='/usr/local/bin/gk'
     case $1 in 
-        dev)      $exe exec -p psaas-engineering-dev ;;
-        stage|ci) $exe exec -p psaas-engineering-ci ;;
-        prod)     $exe exec -p psaas-engineering-prod ;;
-        appl)     $exe exec -p auth0-appliance ;;
-        jump)     $exe exec -p appliance-jumphosts ;;
-        pubc)     $exe exec -p public-cloud ;;
+        dev)      $exe exec -p psaas-engineering-dev -- zsh --login;;
+        stage|ci) $exe exec -p psaas-engineering-ci  -- zsh --login;;
+        prod)     $exe exec -p psaas-engineering-prod  -- zsh --login;;
+        appl)     $exe exec -p auth0-appliance  -- zsh --login;;
+        jump)     $exe exec -p appliance-jumphosts  -- zsh --login;;
+        pubc)     $exe exec -p public-cloud  -- zsh --login;;
         *)        $exe $@ ;;
     esac
 }
